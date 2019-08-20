@@ -4,7 +4,7 @@ let CommonUtils = {};
 CommonUtils.dataIsEmpty = function(data){
     let data_type = typeof data;
     switch (data_type) {
-        case "object": return Object.keys(data).length === 0;
+        case "object": return data === null || Object.keys(data).length === 0;
         case "string": return data.length === 0;
         case "undefined": return true;
         default: return false;
