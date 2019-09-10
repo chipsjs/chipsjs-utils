@@ -8,6 +8,8 @@ let StringUtils = {};
 StringUtils.getSubStringBySymbol = function(str, split_symbol, split_length, is_right) {
     let substr = "";
     let index = str.indexOf(split_symbol);
+    if(index === -1) return str;
+    
     if(is_right === true) {
         let end_index = index + split_length;
         if(end_index  + 1 < str.length) {
