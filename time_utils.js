@@ -2,6 +2,24 @@ const dateFormat = require('dateformat');
 
 let TimeUtils = {};
 
+TimeUtils.mill_time = {
+    one_mill: 1,
+    one_second: 1000,
+    one_minute: 1000*60,
+    one_hour: 1000*60*60,
+    one_day: 24*60*60*1000
+};
+
+TimeUtils.outLinuxTimeStamp = function(is_add, time) {
+    if(is_add)
+    {
+        return parseInt(new Date(new Date().getTime() + time) / 1000);
+    } else
+    {
+        return parseInt(new Date(new Date().getTime() + time) / 1000);
+    }
+};
+
 //eg: Utils.outOtherTimeStamp(false, Common.time.one_day) == yesterday;
 TimeUtils.outOtherTimeStamp = function(is_add, time) {// 格式 y-m-d h:m:s;
     let curData = new Date();
